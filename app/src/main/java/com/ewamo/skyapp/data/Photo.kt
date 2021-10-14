@@ -26,7 +26,6 @@ class Photo(photoJSON: JSONObject) : Serializable {
         } catch (e: JSONException) {
             e.printStackTrace()
         }
-
     }
 
     private fun convertDateToHumanDate(): String {

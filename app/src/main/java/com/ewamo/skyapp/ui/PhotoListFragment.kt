@@ -57,8 +57,7 @@ class PhotoListFragment : Fragment(), ImageRequester.ImageRequesterResponse {
 
         binding.recyclerViewPhotos.apply {
             adapter = photoAdapter
-            layoutManager = linearLayoutManager
-                LinearLayoutManager(requireContext())
+            layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)
         }
 
@@ -144,7 +143,7 @@ class PhotoListFragment : Fragment(), ImageRequester.ImageRequesterResponse {
     override fun receivedNewPhoto(newPhoto: Photo) {
         activity?.runOnUiThread {
             photoList.add(newPhoto)
-            photoAdapter.notifyItemInserted(photoList.size-1)
+            photoAdapter.notifyDataSetChanged()
         }
     }
 
